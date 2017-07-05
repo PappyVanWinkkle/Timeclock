@@ -1,1 +1,38 @@
 <h2>Posts</h2>
+
+<table class="table table-bordered table-hover">
+<thead>
+   <tr>
+      <th>
+         #
+      </th>
+      <th>
+         Date
+      </th>
+      <th>
+         User
+      </th>
+      <th>
+         Rationale 
+      </th>
+   </tr>
+</thead>
+<tbody>
+  <% @post.each do |post| %>
+   <tr>
+      <td>
+         <%= post.id%>
+      </td>
+      <td>
+         <%= post.date %>
+      </td>
+      <td>
+         <%= post.user.last_name %>
+      </td>
+      <td>
+         <%= truncate(post.rationale) %>
+      </td>
+      <% end %>
+   </tr>
+   </tbody>
+ </table>
